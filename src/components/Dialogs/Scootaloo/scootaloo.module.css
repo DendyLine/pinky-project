@@ -1,0 +1,13 @@
+.scootaloo{
+
+}
+.me{
+    display: flex;
+justify-content: end;
+    margin: 20px;
+}
+.you{
+    display: flex;
+    justify-content: start;
+    margin: 20px;
+}

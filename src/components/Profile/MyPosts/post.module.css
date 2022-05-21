@@ -1,0 +1,12 @@
+.post {
+border: darkorchid 2px solid;
+    border-radius: 10px;
+
+}
+.post img{
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    border: darkorchid 1px solid;
+
+}

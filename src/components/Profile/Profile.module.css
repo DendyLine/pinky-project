@@ -1,0 +1,15 @@
+.profile {
+
+    flex-direction: column;
+}
+
+
+.profile .back img {
+    width: 600px;
+    height: 300px;
+}
+
+.profile .avatar img {
+    width: 80px;
+    height: 80px;
+}
