@@ -13,3 +13,8 @@
     width: 80px;
     height: 80px;
 }
+
+.avatarFullName {
+  display: flex;
+  column-gap: 10px;
+}

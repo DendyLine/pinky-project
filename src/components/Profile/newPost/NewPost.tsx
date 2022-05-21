@@ -20,7 +20,7 @@ const NewPost = (props: INewPostProps) => {
 
 
   return <div className={s.newPost}>
-    <input value={props.newTextPost} onChange={onPostChange} type='text' />
+    <input value={postText} onChange={onPostChange} type='text' />
     <button onClick={createPost}>send</button>
   </div>;
 };

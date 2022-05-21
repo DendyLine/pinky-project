@@ -2,21 +2,31 @@ import React from 'react';
 import s from './Profile.module.css';
 import NewPost from './newPost/NewPost';
 import MyPosts from './MyPosts/MyPosts';
-import AvatarDescription from './AvatarDescription/AvatarDescription';
+import { useAppSelector } from '../../redux/store';
 
-interface IProfileProps {
-  addPost: (postMessage: string) => void;
-  newTextPost: string;
-  postsData: {like: number, message: string}[]
-  dispatch:(action: any)=> void
-}
+const Profile = () => {
+  const {avatarUrl, backgroundUrl, bio, fullName} = useAppSelector(state => state.profile);
 
-const Profile = (props: IProfileProps) => {
 
-  return <div className={s.profile}>
-    <AvatarDescription />
-    <NewPost dispatch={props.dispatch} newTextPost={props.newTextPost} addPost={props.addPost} />
-    <MyPosts postsData={props.postsData} />
-  </div>;
+  return (
+    <div className={s.profile}>
+      <img
+        className={s.back}
+        src={backgroundUrl}
+        alt=''
+      />
+      <div className={s.avatarFullName}>
+        <img
+          className={s.avatar}
+          src={avatarUrl}
+          alt='avatar'
+        />
+        <b>{fullName}</b>
+      </div>
+      {bio}
+      <NewPost />
+      <MyPosts />
+    </div>
+  );
 };
 export default Profile;

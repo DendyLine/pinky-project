@@ -8,14 +8,6 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import React from 'react';
-import { TState, TStore } from './redux/state';
-
-interface IAppProps {
-  store: TStore
-  state: TState
-  dispatch: (action: any)=>void
-
-}
 
 const App = (props: IAppProps) => {
 
@@ -24,19 +16,14 @@ const App = (props: IAppProps) => {
       <div className='App'>
         <Header />
         <div className='lowContent'>
-          <Nav friendList={props.state.friendList} menu={props.state.navMenu} />
+          <Nav />
           <div className='changeContent'>
             <Routes>
               <Route
                 path='/profile'
-                element={<Profile
-                  dispatch={props.dispatch}
-                  newTextPost={props.state.newPostText}
-                  addPost={props.store.addPost.bind(props.store)}
-                  postsData={props.state.postsData}
-                />}
+                element={<Profile />}
               />
-              <Route path='/dialogs' element={<Dialogs dialogData={props.state.dialogData} />} />
+              <Route path='/dialogs' element={<Dialogs />} />
               <Route path='/news' element={<News />} />
               <Route path='/music' element={<Music />} />
               <Route path='/settings' element={<Settings />} />

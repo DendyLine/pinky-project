@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 
 const Settings = () => {
@@ -6,8 +6,8 @@ const Settings = () => {
     <div>
       settings
     </div>
-  )
+  );
 
-}
+};
 
-export default Settings
+export default Settings;

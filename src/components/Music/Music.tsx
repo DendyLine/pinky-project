@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 
 const Music = () => {
@@ -6,8 +6,8 @@ const Music = () => {
     <div>
       music
     </div>
-  )
+  );
 
-}
+};
 
-export default Music
+export default Music;
