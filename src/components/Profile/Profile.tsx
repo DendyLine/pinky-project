@@ -6,10 +6,9 @@ import { useAppSelector } from '../../redux/store';
 
 const Profile = () => {
   const {avatarUrl, backgroundUrl, bio, fullName} = useAppSelector(state => state.profile);
-
-
   return (
     <div className={s.profile}>
+      <div className={s.avatarBack}>
       <img
         className={s.back}
         src={backgroundUrl}
@@ -21,11 +20,19 @@ const Profile = () => {
           src={avatarUrl}
           alt='avatar'
         />
-        <b>{fullName}</b>
+        <div className={s.NameDescription}>
+          <b>{fullName}</b>
+          <div className={s.description}>
+            {bio}
+          </div>
+        </div>
       </div>
-      {bio}
+      </div>
+
+        <div className={s.PostsInput}>
       <NewPost />
       <MyPosts />
+        </div>
     </div>
   );
 };

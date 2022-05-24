@@ -1,15 +1,27 @@
-.friendList {
+.friendListH {
   display: flex;
+  flex-direction: column;
+  width: 275px;
+  height: 20%;
+  background-color: antiquewhite;
+  align-items: start;
   gap: 10px;
-  margin: 5px;
+  margin-top: 10px;
+  padding: 5px;
 }
 
-h2 {
+.h {
   margin: 5px;
+  font-size: x-large;
 }
 
-.friendList img {
+.friendListH img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+}
+.friendList{
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
 }

@@ -17,4 +17,25 @@
 .avatarFullName {
   display: flex;
   column-gap: 10px;
+  font-size: xx-large;
+  padding: 5px;
+  border-bottom: white 10px solid;
 }
+.description{
+  font-size: large;
+}
+.NameDescription{
+  display: flex;
+  flex-direction: column;
+}
+.PostsInput{
+
+}
+.avatarBack{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: burlywood;
+  margin: -5px;
+}
+
