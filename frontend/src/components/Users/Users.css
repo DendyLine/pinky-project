@@ -1,0 +1,31 @@
+.users {
+  display: flex;
+  flex-direction: column;
+  gap: 30px
+}
+
+.user__container {
+  display: flex;
+  column-gap: 20px;
+}
+
+.user__info {
+  display: flex;
+  column-gap: 20px;
+}
+
+.user__img-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.user__img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.user__button {
+  width: 100px;
+  height: 30px;
+}

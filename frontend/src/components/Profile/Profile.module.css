@@ -1,0 +1,49 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  background-color: burlywood;
+}
+
+
+.back {
+  display: block;
+  width: 944px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+}
+
+.avatarFullName {
+  display: flex;
+  column-gap: 10px;
+  font-size: xx-large;
+  padding: 5px;
+  border-bottom: white 10px solid;
+}
+
+.description {
+  font-size: large;
+}
+
+.NameDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.PostsInput {
+  padding: 5px;
+  background-color: burlywood;
+}
+
+.avatarBack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: burlywood;
+}
+
