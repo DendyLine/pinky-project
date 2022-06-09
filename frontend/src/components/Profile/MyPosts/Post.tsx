@@ -5,13 +5,14 @@ interface IPostProps {
   like: number,
   message: string
   userName: string
+  avaUrl: string
 }
 
 const Post = (props: IPostProps) => {
   return (
     <div className={s.post}>
       <div className={s.postUp}>
-        <img src='https://i.pinimg.com/originals/48/87/e9/4887e9f60f9bb30847baf69d7cc99863.jpg' alt='' />
+        <img src={props.avaUrl} alt='' />
         <div className={s.NameMessage}>
           <div>
             {props.userName}

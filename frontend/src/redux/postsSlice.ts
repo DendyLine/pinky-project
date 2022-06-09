@@ -1,21 +1,33 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { IPosts } from '../types';
+import api from '../api';
+import { TAppState } from './store';
 
+
+export const fetchPosts = createAsyncThunk('posts/all', async () => {
+  return api.get('/posts') as Promise<IPosts[]>;
+});
+export const sendPost = createAsyncThunk('post/send', async (postText: string, {getState}) => {
+
+  return api.post('/posts', {
+    message: postText,
+    like: 0,
+    userId: (getState() as TAppState).profile.currentUser.id
+  }) as Promise<IPosts>;
+});
 const postsSlice = createSlice({
   name: 'posts',
-  initialState: [
-    {like: 10, message: 'Pinkie, you sure i need this?', userName: 'Rainbow Dash'},
-    {like: 23, message: 'That\'s some kind of mail?', userName: 'Rainbow Dash'},
-    {like: 55, message: 'look, i\'m so cool!', userName: 'Rainbow Dash'},
-    {like: 3, message: 'hey Applejack, may i take more sidr?', userName: 'Rainbow Dash'},
-    {like: 46, message: 'fast and furious!', userName: 'Rainbow Dash'}
-  ],
-  reducers: {
-    addPost(state, action) {
-      state.push({like: 0, message: action.payload, userName: 'Rainbow Dash'});
-    }
+  initialState: [] as IPosts[],
+  reducers: {},
+  extraReducers: ({addCase}) => {
+    addCase(sendPost.fulfilled, (state, action) => {
+      state.push(action.payload);
+    });
+    addCase(fetchPosts.fulfilled, (state, action)=>{
+      state.length=0
+      state.push(...action.payload)
+    })
   }
 });
-
-export const {addPost} = postsSlice.actions;
 
 export default postsSlice.reducer;

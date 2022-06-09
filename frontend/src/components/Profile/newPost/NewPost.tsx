@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import s from './newPost.module.css';
-import { addPost } from '../../../redux/postsSlice';
 import { useAppDispatch } from '../../../redux/store';
+import { sendPost } from '../../../redux/postsSlice';
 
 const NewPost = () => {
   const [postText, setPostText] = useState('');
@@ -12,7 +12,7 @@ const NewPost = () => {
   };
 
   const createPost = () => {
-    dispatch(addPost(postText));
+    dispatch(sendPost(postText));
     setPostText('');
   };
 

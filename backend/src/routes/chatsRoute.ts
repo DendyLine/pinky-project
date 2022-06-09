@@ -1,4 +1,4 @@
-import { Chat, User } from '@prisma/client';
+import { User } from '@prisma/client';
 import Router from 'express';
 import { db } from '../db';
 

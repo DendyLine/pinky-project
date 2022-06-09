@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import s from './dialogs.module.css';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { fetchChats, sendMessage } from '../../redux/dialogsSlice';
-import { fetchUsers } from '../../redux/usersSlice';
+import { fetchChats,} from '../../redux/dialogsSlice';
+
 import { Link } from 'react-router-dom';
 
 

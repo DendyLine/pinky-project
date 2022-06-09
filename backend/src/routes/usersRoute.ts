@@ -5,8 +5,15 @@ import { db } from '../db';
 const usersRoute = Router();
 
 usersRoute.get('/', async (req, res) => {
+  console.log(req);
   const users = await db.user.findMany({orderBy: {id: 'asc'}}) as User[];
   res.json(users);
+});
+
+usersRoute.get('/users/:id', async (req, res) => {
+  const user = await db.user.findUnique({where: {id:Number(req.params.id)}
+  });
+  res.json(user);
 });
 
 usersRoute.patch('/:id/follow', async (req, res) => {

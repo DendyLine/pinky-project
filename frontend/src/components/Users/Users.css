@@ -1,7 +1,9 @@
 .users {
   display: flex;
   flex-direction: column;
-  gap: 30px
+  gap: 30px;
+  height: 850px;
+  overflow-y: auto;
 }
 
 .user__container {
@@ -28,4 +30,7 @@
 .user__button {
   width: 100px;
   height: 30px;
+}
+.active-page{
+  font-weight: bold;
 }

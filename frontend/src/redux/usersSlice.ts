@@ -7,13 +7,17 @@ export const followUser = createAsyncThunk('user/follow', async (id: number) => 
 });
 
 export const fetchUsers = createAsyncThunk('users/all', async () => {
-  return api.get('/users') as Promise<IUser[]>;
+  return api.get('/users?page=2') as Promise<IUser[]>;
 });
 
 const usersSlice = createSlice({
   name: 'poniesUsers',
   initialState: {
     usersList: [] as IUser[],
+    pageSize: 5,
+    totalUsersCount: 9,
+    currentPage: 1,
+
   },
   reducers: {},
   extraReducers: ({addCase}) => {

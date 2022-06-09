@@ -1,29 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './Profile.module.css';
 import NewPost from './newPost/NewPost';
 import MyPosts from './MyPosts/MyPosts';
-import { useAppSelector } from '../../redux/store';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { fetchUser } from '../../redux/profileSlice';
 
 const Profile = () => {
-  const {avatarUrl, backgroundUrl, bio, fullName} = useAppSelector(state => state.profile);
+  const dispatch = useAppDispatch()
+  const user = useAppSelector(state => state.profile.currentUser)
+  useEffect(()=>{
+    dispatch(fetchUser(5))
+    }
+  )
   return (
     <div className={s.profile}>
       <div className={s.avatarBack}>
         <img
           className={s.back}
-          src={backgroundUrl}
+          src='/images/Hat.jpg'
           alt=''
         />
         <div className={s.avatarFullName}>
           <img
             className={s.avatar}
-            src={avatarUrl}
+            src={user.avaUrl}
             alt='avatar'
           />
           <div className={s.NameDescription}>
-            <b>{fullName}</b>
+            <b>{user.username}</b>
             <div className={s.description}>
-              {bio}
+              {user.bio}
             </div>
           </div>
         </div>

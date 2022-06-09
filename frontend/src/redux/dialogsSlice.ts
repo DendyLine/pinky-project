@@ -15,12 +15,7 @@ export const fetchMessages = createAsyncThunk('message/all', async (chatId: stri
 const dialogsSlice = createSlice({
     name: 'poniesDialogs',
     initialState: {
-      dialogsList: [
-        // {id: 1, direction: '/scootaloo', name: 'Scootaloo', src: '/images/Scootaloo.jpg'},
-        // {id: 2, direction: '/spitfire', name: 'Spitfire', src: '/images/Spitfire.jpg'},
-        // {id: 3, direction: '/mom', name: 'Mom', src: '/images/Mom.jpg'},
-        // {id: 4, direction: '/soarin', name: 'Soarin', src: '/images/Soarin.jpg'}
-      ] as IChats[],
+      dialogsList: [] as IChats[],
       messages: [] as IMessage[],
       activeDialogId: 1
     },

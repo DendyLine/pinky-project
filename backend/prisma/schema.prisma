@@ -11,15 +11,25 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  username  String
-  avaUrl    String
-  country   String
-  town      String
-  bio       String
-  followed  Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now()) @updatedAt
+  id         Int          @id @default(autoincrement())
+  username   String
+  avaUrl     String
+  country    String
+  town       String
+  bio        String
+  followed   Boolean      @default(false)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @default(now()) @updatedAt
+  Post       Post[]
+  ActiveUser ActiveUser[]
+}
+
+model Post {
+  id      Int    @id @default(autoincrement())
+  like    Int
+  message String
+  userId  Int
+  user    User   @relation(fields: [userId], references: [id])
 }
 
 model Chat {
@@ -29,10 +39,10 @@ model Chat {
 }
 
 model Message {
-  id       Int    @id @default(autoincrement())
-  chatId   Int
-  senderId Int
-  text     String
-  chat     Chat   @relation(fields: [chatId], references: [id])
+  id        Int      @id @default(autoincrement())
+  chatId    Int
+  senderId  Int
+  text      String
+  chat      Chat     @relation(fields: [chatId], references: [id])
   createdAt DateTime @default(now())
 }

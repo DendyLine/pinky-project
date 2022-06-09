@@ -15,7 +15,8 @@ const Users = () => {
   };
 
   return (
-    <div className='users'>
+    <div >
+      <div className='users'>
       {usersList.map(user => (
           <div className='user__container'>
             <div className='user__img-button'>
@@ -37,6 +38,12 @@ const Users = () => {
           </div>
         )
       )}
+      </div>
+      <span className="active-page">1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
     </div>
   );
 
