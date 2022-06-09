@@ -25,15 +25,7 @@ const dialogsSlice = createSlice({
       messages: [] as IMessage[],
       activeDialogId: 1
     },
-    reducers: {
-      sendMessage(state, action: {type: string, payload: {text: string, senderId: number}}) {
-        const newId = state.messages[state.messages.length - 1].id + 1;
-        state.messages.push({
-          id: newId, senderId: action.payload.senderId, text: action.payload.text,
-          chatId: 1
-        });
-      }
-    },
+    reducers: {},
     extraReducers: ({addCase}) => {
       addCase(fetchChats.fulfilled, (state, action) => {
         state.dialogsList = action.payload;
@@ -41,7 +33,9 @@ const dialogsSlice = createSlice({
       addCase(fetchMessages.fulfilled, (state, action) => {
         state.messages = action.payload;
       });
-
+      addCase(sendMessage.fulfilled, (state, action) => {
+        state.messages.push(action.payload);
+      });
     }
   }
 );
