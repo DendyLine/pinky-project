@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { IUser } from '../types';
 import api from '../api';
+import { IUser } from '../types';
 
 export const followUser = createAsyncThunk('user/follow', async (id: number) => {
   return api.patch(`/users/${id}/follow`) as Promise<IUser>;

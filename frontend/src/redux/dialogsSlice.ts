@@ -3,8 +3,6 @@ import api from '../api';
 import { IChats, IMessage } from '../types';
 
 
-
-
 export const fetchChats = createAsyncThunk('chats/all', async () => {
   return api.get('/chats') as Promise<IChats[]>;
 });

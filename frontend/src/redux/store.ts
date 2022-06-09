@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import postsReducer from './postsSlice';
-import profileReducer from './profileSlice';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import dialogsReducer from './dialogsSlice';
+import postsReducer from './postsSlice';
+import profileReducer from './profileSlice';
 import usersReducer from './usersSlice';
 
 export const store = configureStore({

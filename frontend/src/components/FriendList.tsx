@@ -1,6 +1,6 @@
 import React from 'react';
-import s from './FriendList.module.css';
-import { useAppSelector } from '../../../redux/store';
+import { useAppSelector } from 'src/redux/store';
+import s from 'src/styles/FriendList.module.css';
 
 const FriendList = () => {
   const friends = useAppSelector(state => state.profile.friends);

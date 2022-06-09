@@ -19,7 +19,8 @@ const profileSlice = createSlice({
   reducers: {},
   extraReducers: ({addCase}) => {
     addCase(fetchUser.fulfilled, (state, action) => {
-      state.currentUser = action.payload
+      state.currentUser = action.payload;
     });
-  }})
+  }
+});
 export default profileSlice.reducer;

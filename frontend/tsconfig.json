@@ -19,9 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "paths": {
-      "~/@prisma/client": "../backend/node_modules/@prisma/client"
-    }
+    "baseUrl": "."
   },
   "include": [
     "src"

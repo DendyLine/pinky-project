@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { IPosts } from '../types';
 import api from '../api';
+import { IPosts } from '../types';
 import { TAppState } from './store';
 
 
@@ -23,10 +23,10 @@ const postsSlice = createSlice({
     addCase(sendPost.fulfilled, (state, action) => {
       state.push(action.payload);
     });
-    addCase(fetchPosts.fulfilled, (state, action)=>{
-      state.length=0
-      state.push(...action.payload)
-    })
+    addCase(fetchPosts.fulfilled, (state, action) => {
+      state.length = 0;
+      state.push(...action.payload);
+    });
   }
 });
 

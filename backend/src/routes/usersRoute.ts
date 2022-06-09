@@ -10,7 +10,7 @@ usersRoute.get('/', async (req, res) => {
   res.json(users);
 });
 
-usersRoute.get('/users/:id', async (req, res) => {
+usersRoute.get('/:id', async (req, res) => {
   const user = await db.user.findUnique({where: {id:Number(req.params.id)}
   });
   res.json(user);

@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import s from './Profile.module.css';
-import NewPost from './newPost/NewPost';
-import MyPosts from './MyPosts/MyPosts';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { fetchUser } from '../../redux/profileSlice';
+import MyPosts from 'src/components/MyPosts';
+import NewPost from 'src/components/NewPost';
+import { fetchUser } from 'src/redux/profileSlice';
+import { useAppDispatch, useAppSelector } from 'src/redux/store';
+import s from 'src/styles/Profile.module.css';
 
 const Profile = () => {
-  const dispatch = useAppDispatch()
-  const user = useAppSelector(state => state.profile.currentUser)
-  useEffect(()=>{
-    dispatch(fetchUser(5))
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(state => state.profile.currentUser);
+  useEffect(() => {
+      dispatch(fetchUser(5));
     }
-  )
+  );
   return (
     <div className={s.profile}>
       <div className={s.avatarBack}>

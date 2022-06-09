@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './post.module.css';
+import s from 'src/styles/post.module.css';
 
 interface IPostProps {
   like: number,

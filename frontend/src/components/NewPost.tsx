@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
-import s from './newPost.module.css';
-import { useAppDispatch } from '../../../redux/store';
-import { sendPost } from '../../../redux/postsSlice';
+import { sendPost } from 'src/redux/postsSlice';
+import { useAppDispatch } from 'src/redux/store';
+import s from 'src/styles/newPost.module.css';
 
 const NewPost = () => {
   const [postText, setPostText] = useState('');

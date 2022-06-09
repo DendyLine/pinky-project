@@ -28,5 +28,5 @@ export interface IPosts {
   message: string;
   userId: number;
   user: string;
-  imgUrl: string
+  imgUrl: string;
 }

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import s from './myPosts.module.css';
+import { fetchPosts } from 'src/redux/postsSlice';
+import { useAppDispatch, useAppSelector } from 'src/redux/store';
+import s from 'src/styles/myPosts.module.css';
 import Post from './Post';
-import { useAppDispatch, useAppSelector } from '../../../redux/store';
-import { fetchPosts } from '../../../redux/postsSlice';
 
 const MyPosts = () => {
   const dispatch = useAppDispatch();

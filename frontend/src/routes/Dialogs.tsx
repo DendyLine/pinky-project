@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import s from './dialogs.module.css';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { fetchChats,} from '../../redux/dialogsSlice';
 
 import { Link } from 'react-router-dom';
-
+import { fetchChats, } from 'src/redux/dialogsSlice';
+import { useAppDispatch, useAppSelector } from 'src/redux/store';
+import s from 'src/styles/dialogs.module.css';
 
 
 const Dialogs = () => {
@@ -14,7 +13,7 @@ const Dialogs = () => {
 
   useEffect(() => {
     dispatch(fetchChats());
-  }, [])
+  }, []);
 
   return (<div className={s.dialogs}>
       <div className={s.people}>

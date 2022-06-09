@@ -1,15 +1,16 @@
-import './App.css';
-import Header from './components/Header/Header';
-import Nav from './components/SideBar/Nav';
-import { Route, Routes } from 'react-router-dom';
-import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
-import News from './components/News/News';
-import Music from './components/Music/Music';
-import Settings from './components/Settings/Settings';
 import React from 'react';
-import Users from './components/Users/Users';
-import Messages from './components/Dialogs/Messages';
+import { Route, Routes } from 'react-router-dom';
+import Header from 'src/components/Header';
+import Nav from 'src/components/Nav';
+import Dialogs from 'src/routes/Dialogs';
+import Messages from 'src/routes/Messages';
+import Music from 'src/routes/Music';
+import News from 'src/routes/News';
+import Profile from 'src/routes/Profile';
+import Settings from 'src/routes/Settings';
+import Users from 'src/routes/Users';
+import './App.css';
+
 
 const App = () => {
 

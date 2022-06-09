@@ -1,7 +1,7 @@
 import React from 'react';
-import './Nav.css';
 import { NavLink } from 'react-router-dom';
-import FriendList from './FriendList/FriendList';
+import FriendList from './FriendList';
+import 'src/styles/Nav.css';
 
 
 const navMenu = [
