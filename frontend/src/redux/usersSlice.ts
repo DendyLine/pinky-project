@@ -6,23 +6,22 @@ export const followUser = createAsyncThunk('user/follow', async (id: number) => 
   return api.patch(`/users/${id}/follow`) as Promise<IUser>;
 });
 
-export const fetchUsers = createAsyncThunk('users/all', async () => {
-  return api.get('/users?page=2') as Promise<IUser[]>;
+export const fetchUsers = createAsyncThunk('users/all', async (page: number) => {
+  return api.get(`/users?page=${page}`) as Promise<{users: IUser[], total:number}>;
 });
 
 const usersSlice = createSlice({
   name: 'poniesUsers',
   initialState: {
     usersList: [] as IUser[],
-    pageSize: 5,
-    totalUsersCount: 9,
-    currentPage: 1,
+    totalUsersCount: 0,
 
   },
   reducers: {},
   extraReducers: ({addCase}) => {
     addCase(fetchUsers.fulfilled, (state, action) => {
-      state.usersList = action.payload;
+      state.usersList = action.payload.users;
+      state.totalUsersCount = action.payload.total;
     });
     addCase(followUser.fulfilled, (state, action) => {
       const index = state.usersList.findIndex(user => user.id === action.payload.id);

@@ -1,14 +1,20 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import Pagination from 'src/components/Pagination';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
 import { fetchUsers, followUser } from 'src/redux/usersSlice';
 import 'src/styles/Users.css';
 
 const Users = () => {
-  const usersList = useAppSelector(state => state.users.usersList);
+  const {usersList, totalUsersCount} = useAppSelector(state => state.users);
   const dispatch = useAppDispatch();
+  const {search} = useLocation();
+
   useEffect(() => {
-    dispatch(fetchUsers());
-  }, []);
+    const params = new URLSearchParams(search);
+    const currentPage = Number(params.get('page') ?? 1)
+    dispatch(fetchUsers(currentPage));
+  }, [search]);
 
   const onFollowButton = (id: number) => {
     dispatch(followUser(id));
@@ -16,6 +22,7 @@ const Users = () => {
 
   return (
     <div>
+      <Pagination numOfPages={Math.ceil(totalUsersCount / 3)}/>
       <div className='users'>
         {usersList.map(user => (
             <div className='user__container'>
@@ -39,11 +46,6 @@ const Users = () => {
           )
         )}
       </div>
-      <span className='active-page'>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
     </div>
   );
 

@@ -1,11 +1,12 @@
 import cors from 'cors';
 import express from 'express';
-import morgan from 'morgan';
 import helmet from 'helmet';
-import usersRoute from './routes/usersRoute';
+import morgan from 'morgan';
 import chatsRoute from './routes/chatsRoute';
 import postsRoute from './routes/postsRoute';
 import profileRoute from './routes/profileRoute';
+import usersRoute from './routes/usersRoute';
+
 const app = express();
 const port = process.env.PORT || 4000;
 
@@ -14,10 +15,11 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(helmet());
 
-app.use('/users', usersRoute);
+app.use(usersRoute);
 app.use(chatsRoute);
-app.use(postsRoute)
-app.use(profileRoute)
+app.use(postsRoute);
+app.use(profileRoute);
+
 app.listen(port, () => {
   console.log(`App listening on the port ${port}`);
 });
