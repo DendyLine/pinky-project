@@ -4,13 +4,15 @@ import dialogsReducer from './dialogsSlice';
 import postsReducer from './postsSlice';
 import profileReducer from './profileSlice';
 import usersReducer from './usersSlice';
+import newsReducer from './newsSlice'
 
 export const store = configureStore({
   reducer: {
     posts: postsReducer,
     profile: profileReducer,
     dialogs: dialogsReducer,
-    users: usersReducer
+    users: usersReducer,
+    news: newsReducer
   }
 });
 type TAppDispatch = typeof store.dispatch

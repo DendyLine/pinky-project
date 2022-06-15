@@ -30,3 +30,11 @@ export interface IPosts {
   user: string;
   imgUrl: string;
 }
+export interface INews{
+  id: number
+  userId: number
+  user: IUser
+  text: string
+  like: number
+  imgUrl: string
+}

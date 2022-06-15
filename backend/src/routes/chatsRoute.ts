@@ -18,6 +18,7 @@ chatsRoute.get('/chats', async (req, res) => {
     const user = await db.user.findUnique({where: {id: anotherParticipantId}}) as User;
     return {chatId: chat.id, imageURL: user.avaUrl, title: user.username, lastMessage: chat.messages[0]};
   }));
+  console.log(chats, chatsData);
   res.json(chatsData);
 });
 

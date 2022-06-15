@@ -15,14 +15,18 @@ const usersSlice = createSlice({
   initialState: {
     usersList: [] as IUser[],
     totalUsersCount: 0,
-
+    isLoading: false
   },
   reducers: {},
   extraReducers: ({addCase}) => {
     addCase(fetchUsers.fulfilled, (state, action) => {
       state.usersList = action.payload.users;
       state.totalUsersCount = action.payload.total;
+      state.isLoading = false
     });
+    addCase(fetchUsers.pending, (state, action)=>{
+      state.isLoading = true
+    })
     addCase(followUser.fulfilled, (state, action) => {
       const index = state.usersList.findIndex(user => user.id === action.payload.id);
       state.usersList[index] = action.payload;

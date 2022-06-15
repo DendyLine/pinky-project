@@ -4,6 +4,7 @@
   gap: 30px;
   height: 850px;
   overflow-y: auto;
+  margin-left: 20px;
 }
 
 .user__container {
@@ -34,4 +35,7 @@
 
 .active-page {
   font-weight: bold;
+}
+.loader img{
+  width: 300px;
 }
