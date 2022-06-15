@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import { sendPost } from 'src/redux/postsSlice';
 import { useAppDispatch } from 'src/redux/store';
-import s from 'src/styles/newPost.module.css';
+import 'src/styles/newPost.css';
 
 const NewPost = () => {
   const [postText, setPostText] = useState('');
@@ -16,7 +16,7 @@ const NewPost = () => {
     setPostText('');
   };
 
-  return <div className={s.newPost}>
+  return <div className='profile__newPost'>
     <input value={postText} onChange={onPostChange} type='text' />
     <button onClick={createPost}>send</button>
   </div>;

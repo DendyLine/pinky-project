@@ -1,4 +1,4 @@
-.friendListH {
+.friendList {
   display: flex;
   flex-direction: column;
   width: 275px;
@@ -10,18 +10,18 @@
   padding: 5px;
 }
 
-.h {
+.friendList__header {
   margin: 5px;
   font-size: x-large;
 }
 
-.friendListH img {
+.friendList img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
 }
 
-.friendList {
+.friendList__array {
   display: flex;
   flex-direction: row;
   margin-left: 5px;

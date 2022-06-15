@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchChats, } from 'src/redux/dialogsSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
-import s from 'src/styles/dialogs.module.css';
+import 'src/styles/dialogs.css';
 
 
 const Dialogs = () => {
@@ -14,18 +14,18 @@ const Dialogs = () => {
   useEffect(() => {
     dispatch(fetchChats());
   }, []);
-  return (<div className={s.dialogs}>
-      <div className={s.people}>
+  return (<div className='dialogs'>
+      <div className='dialogs__ul'>
         <ul>
           {dialogsList.map(dialog => (
             <li key={dialog.chatId}>
             <Link to={String(dialog.chatId)}>
-              <div className={s.oneChat}>
+              <div className='dialogs__ul--block'>
                   <img src={dialog.imageURL} />
-                  <span className={s.name}>
+                  <span className='dialogs__block--name'>
                     {dialog.title}
                   </span>
-                  <span className={s.lastMessage}>
+                  <span className='dialogs__block--lastMessage'>
                     {dialog.lastMessage?.text}
                   </span>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import s from 'src/styles/post.module.css';
+import 'src/styles/post.css';
 
 interface IPostProps {
   like: number,
@@ -10,10 +10,10 @@ interface IPostProps {
 
 const Post = (props: IPostProps) => {
   return (
-    <div className={s.post}>
-      <div className={s.postUp}>
+    <div className='profile__myPosts--post'>
+      <div className='profile__post--up'>
         <img src={props.avaUrl} alt='' />
-        <div className={s.NameMessage}>
+        <div className='profile__post--text'>
           <div>
             {props.userName}
           </div>

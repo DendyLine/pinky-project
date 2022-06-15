@@ -1,14 +1,14 @@
 import React from 'react';
-import s from 'src/styles/header.module.css';
+import 'src/styles/header.css';
 
 const Header = () => {
-  return (<div className={s.header}>
+  return (<div className='header'>
     <header><img
       src='https://play-lh.googleusercontent.com/giGOGWKlJJzOJ7KX6M2mbszLmD1dXGOaRIKpcb2MijBit6UHtBGpfWla2KnVYkpjbA'
       alt=''
     />
     </header>
-    <span className={s.name}>
+    <span className='header__networkName'>
     TOWN
     </span>
   </div>);

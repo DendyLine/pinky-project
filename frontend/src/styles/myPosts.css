@@ -1,4 +1,4 @@
-.myPosts {
+.profile__myPosts {
   display: flex;
   flex-direction: column;
   gap: 3px;

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { fetchPosts } from 'src/redux/postsSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
-import s from 'src/styles/myPosts.module.css';
+import 'src/styles/myPosts.css';
 import Post from './Post';
 
 const MyPosts = () => {
@@ -13,7 +13,7 @@ const MyPosts = () => {
     }, []
   );
   return (
-    <div className={s.myPosts}>
+    <div className='profile__myPosts'>
       {posts.map(post => <Post
         key={post.message}
         like={post.like}

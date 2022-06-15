@@ -3,7 +3,7 @@ import MyPosts from 'src/components/MyPosts';
 import NewPost from 'src/components/NewPost';
 import { fetchUser } from 'src/redux/profileSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
-import s from 'src/styles/Profile.module.css';
+import 'src/styles/Profile.css';
 
 const Profile = () => {
   const dispatch = useAppDispatch();
@@ -13,29 +13,29 @@ const Profile = () => {
     }
   );
   return (
-    <div className={s.profile}>
-      <div className={s.avatarBack}>
+    <div className='profile'>
+      <div className='profile__background'>
         <img
-          className={s.back}
+          className='profile__hat'
           src='/images/Hat.jpg'
           alt=''
         />
-        <div className={s.avatarFullName}>
+        <div className='profile__avatarFullName'>
           <img
-            className={s.avatar}
+            className='profile__avatar'
             src={user.avaUrl}
             alt='avatar'
           />
-          <div className={s.NameDescription}>
+          <div className='profile__nameDescription'>
             <b>{user.username}</b>
-            <div className={s.description}>
+            <div className='profile__description'>
               {user.bio}
             </div>
           </div>
         </div>
       </div>
 
-      <div className={s.PostsInput}>
+      <div className='profile__posts--input'>
         <NewPost />
         <MyPosts />
       </div>

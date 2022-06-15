@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchMessages, sendMessage } from 'src/redux/dialogsSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
-import s from 'src/styles/dialogs.module.css';
+import 'src/styles/dialogs.css';
 
 const Messages = () => {
   const dispatch = useAppDispatch();
@@ -22,11 +22,11 @@ const Messages = () => {
   };
 
   return (
-    <div className={s.dialogs}>
+    <div className='dialogs'>
       <button onClick={() => navigate('/dialogs')}>back</button>
-      <ul className={s.messages}>
+      <ul className='dialogs__messages'>
         {messages.map(message => (
-          <li key={message.id} className={message.senderId === currentUserId ? s.me : ''}>
+          <li key={message.id} className={message.senderId === currentUserId ? 'dialogs__messages--myMessage' : ''}>
 
             {message.text}</li>
         ))}

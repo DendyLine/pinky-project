@@ -9,7 +9,7 @@
 .header img {
   width: 100px;
 }
-.name{
+.header__networkName{
   color: white;
   font-weight: bold;
   font-size: xxx-large;

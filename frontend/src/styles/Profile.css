@@ -6,19 +6,19 @@
 }
 
 
-.back {
+.profile__hat {
   display: block;
   width: 944px;
 }
 
-.avatar {
+.profile__avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
 
 }
 
-.avatarFullName {
+.profile__avatarFullName {
   display: flex;
   column-gap: 10px;
   font-size: xx-large;
@@ -26,21 +26,21 @@
   border-bottom: white 10px solid;
 }
 
-.description {
+.profile__description {
   font-size: large;
 }
 
-.NameDescription {
+.profile__nameDescription {
   display: flex;
   flex-direction: column;
 }
 
-.PostsInput {
+.profile__posts--input {
   padding: 5px;
   background-color: burlywood;
 }
 
-.avatarBack {
+.profile__background {
   display: flex;
   flex-direction: column;
   gap: 10px;
