@@ -15,6 +15,7 @@ const MyPosts = () => {
   return (
     <div className='profile__myPosts'>
       {posts.map(post => <Post
+        id = {post.id}
         key={post.message}
         like={post.like}
         message={post.message}

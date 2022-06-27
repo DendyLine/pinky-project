@@ -14,12 +14,27 @@
 
 .user__info {
   display: flex;
-  column-gap: 20px;
+  column-gap: 40px;
 }
 
-.user__img-button {
+.user__bio{
+  width: 200px;
+}
+
+.user__coutryTown{
   display: flex;
   flex-direction: column;
+  margin-top: 28px;
+}
+
+.user__imgButton {
+  display: flex;
+  flex-direction: column;
+}
+
+.user__userName{
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .user__img {
@@ -31,6 +46,16 @@
 .user__button {
   width: 100px;
   height: 30px;
+  border-radius: 0;
+  transition: background-color 0.15s ease-out;
+  font-weight: bold;
+  border: none;
+  background-color: burlywood;
+}
+
+.user__button:hover{
+  background-color: burlywood;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24)
 }
 
 .active-page {

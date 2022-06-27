@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Pagination from 'src/components/Pagination';
 import { Preloader } from 'src/components/Preloader';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
@@ -23,23 +23,24 @@ const Users = () => {
 
   return (
     <div>
-      <Pagination numOfPages={Math.ceil(totalUsersCount / 3)} />
       {isLoading ? <Preloader /> :
         <div className='users'>
           {usersList.map(user => (
               <div className='user__container'>
-                <div className='user__img-button'>
-                  <img className='user__img' src={user.avaUrl} />
+                <div className='user__imgButton'>
+                  <NavLink to={'/Profile'}>
+                  <img className='user__img' src={user.avaUrl} alt='ava' />
+                  </NavLink>
                   <button className='user__button' onClick={() => onFollowButton(user.id)}>
                     {user.followed ? 'Unfollow' : 'Follow'}
                   </button>
                 </div>
                 <div className='user__info'>
                   <div>
-                    <div>{user.username}</div>
-                    <div>{user.bio}</div>
+                    <div className="user__userName">{user.username}</div>
+                    <div className="user__bio">{user.bio}</div>
                   </div>
-                  <div>
+                  <div className="user__coutryTown">
                     <div>{user.country}</div>
                     <div>{user.town}</div>
                   </div>
@@ -49,6 +50,8 @@ const Users = () => {
           )}
         </div>
       }
+      <Pagination numOfPages={Math.ceil(totalUsersCount / 3)} />
+
     </div>
   );
 

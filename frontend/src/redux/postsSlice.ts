@@ -3,6 +3,9 @@ import api from '../api';
 import { IPosts } from '../types';
 import { TAppState } from './store';
 
+export const deletePost = createAsyncThunk('post/delete', async (id: number) => {
+  return api.delete(`/posts/${id}`) as Promise<number>;
+});
 
 export const fetchPosts = createAsyncThunk('posts/all', async () => {
   return api.get('/posts') as Promise<IPosts[]>;
@@ -27,7 +30,12 @@ const postsSlice = createSlice({
       state.length = 0;
       state.push(...action.payload);
     });
+    addCase(deletePost.fulfilled, (state, action) => {
+      const deletedPostIndex = state.findIndex(post => post.id === action.payload)
+      state.splice(deletedPostIndex, 1)
+    });
   }
 });
+
 
 export default postsSlice.reducer;

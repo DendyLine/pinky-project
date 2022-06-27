@@ -22,10 +22,7 @@ const App = () => {
           <Nav />
           <div className='changeContent'>
             <Routes>
-              <Route
-                path='/profile'
-                element={<Profile />}
-              />
+              <Route path='/profile' element={<Profile />} />
               <Route path='/dialogs' element={<Dialogs />} />
               <Route path='/dialogs/:chatId' element={<Messages />} />
               <Route path='/news' element={<News />} />

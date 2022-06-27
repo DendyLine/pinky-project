@@ -12,6 +12,8 @@
 .header__networkName{
   color: white;
   font-weight: bold;
-  font-size: xxx-large;
+  font-size: 88px;
   display: flex;
+  margin-left: 88px;
+  font-family: Times, serif;
 }

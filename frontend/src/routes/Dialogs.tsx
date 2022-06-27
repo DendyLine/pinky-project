@@ -22,13 +22,14 @@ const Dialogs = () => {
             <Link to={String(dialog.chatId)}>
               <div className='dialogs__ul--block'>
                   <img src={dialog.imageURL} />
+                <div className='dialogs__block--nameLastMessage'>
                   <span className='dialogs__block--name'>
                     {dialog.title}
                   </span>
                   <span className='dialogs__block--lastMessage'>
                     {dialog.lastMessage?.text}
                   </span>
-
+                </div>
               </div>
             </Link>
             </li>
