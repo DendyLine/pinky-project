@@ -26,3 +26,16 @@
   margin: 3px;
   gap: 30px;
 }
+.post__button--delete{
+  display: flex;
+  justify-content: flex-end;
+}
+.post__button--delete button{
+border-radius: 0;
+  background-color: white;
+  transition: background-color 0.15s ease-out;
+}
+
+.post__button--delete button:hover{
+  background-color: burlywood;
+}

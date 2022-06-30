@@ -1,5 +1,4 @@
 import Router from 'express';
-import { db } from '../db';
 
 const profileRoute = Router();
 // debugger

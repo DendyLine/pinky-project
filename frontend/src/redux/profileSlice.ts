@@ -10,6 +10,7 @@ const profileSlice = createSlice({
   name: 'profile',
   initialState: {
     currentUser: {} as IUser,
+    userId: 5,
     friends: [
       {id: 2, img: '/images/Applejack.jpg', name: 'Applejack'},
       {id: 3, img: '/images/Pinkie_Pie.jpg', name: 'Pinkie Pie'},

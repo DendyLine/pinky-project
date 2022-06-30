@@ -16,7 +16,7 @@ const MyPosts = () => {
     <div className='profile__myPosts'>
       {posts.map(post => <Post
         id = {post.id}
-        key={post.message}
+        key={post.id}
         like={post.like}
         message={post.message}
         userName={currentUser.username}

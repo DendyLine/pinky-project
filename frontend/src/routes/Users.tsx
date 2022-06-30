@@ -28,7 +28,7 @@ const Users = () => {
           {usersList.map(user => (
               <div className='user__container'>
                 <div className='user__imgButton'>
-                  <NavLink to={'/Profile'}>
+                  <NavLink to={'/profile/:id'}>
                   <img className='user__img' src={user.avaUrl} alt='ava' />
                   </NavLink>
                   <button className='user__button' onClick={() => onFollowButton(user.id)}>

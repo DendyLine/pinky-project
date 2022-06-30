@@ -7,11 +7,10 @@ import 'src/styles/Profile.css';
 
 const Profile = () => {
   const dispatch = useAppDispatch();
-  const user = useAppSelector(state => state.profile.currentUser);
+  const {userId, currentUser} = useAppSelector(state => state.profile);
   useEffect(() => {
-      dispatch(fetchUser(5));
-    }
-  );
+    dispatch(fetchUser(userId));
+  }, []);
   return (
     <div className='profile'>
       <div className='profile__background'>
@@ -23,13 +22,13 @@ const Profile = () => {
         <div className='profile__avatarFullName'>
           <img
             className='profile__avatar'
-            src={user.avaUrl}
+            src={currentUser.avaUrl}
             alt='avatar'
           />
           <div className='profile__nameDescription'>
-            <b>{user.username}</b>
+            <b>{currentUser.username}</b>
             <div className='profile__description'>
-              {user.bio}
+              {currentUser.bio}
             </div>
           </div>
         </div>

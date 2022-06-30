@@ -12,11 +12,12 @@ datasource db {
 
 model User {
   id        Int      @id @default(autoincrement())
-  username  String
-  avaUrl    String
-  country   String
-  town      String
-  bio       String
+  username  String   @unique
+  password  String
+  avaUrl    String   @default("")
+  country   String   @default("")
+  town      String   @default("")
+  bio       String   @default("")
   followed  Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt

@@ -10,7 +10,7 @@ const currentUserId = 5;
 
 chatsRoute.get('/chats', async (req, res) => {
   const chats = await db.chat.findMany({
-    include: {messages:{take: 1, orderBy: {createdAt: 'desc'}}},
+    include: {messages: {take: 1, orderBy: {createdAt: 'desc'}}},
     orderBy: {id: 'asc'}
   });
   const chatsData = await Promise.all(chats.map(async chat => {

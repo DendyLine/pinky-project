@@ -10,7 +10,7 @@ const Messages = () => {
   const params = useParams();
   const chatId = Number(params.chatId);
   const {messages} = useAppSelector(state => state.dialogs);
-  const currentUserId = useAppSelector(state => state.profile.currentUser.id);
+  const currentUserId = useAppSelector(state => state.profile.userId);
   const navigate = useNavigate();
   useEffect(() => {
     dispatch(fetchMessages(chatId!));
@@ -23,7 +23,9 @@ const Messages = () => {
 
   return (
     <div className='dialogs'>
-      <button onClick={() => navigate('/dialogs')}>back</button>
+      <div className='dialogs__button--back'>
+      <button  onClick={() => navigate('/dialogs')}>back</button>
+      </div>
       <ul className='dialogs__messages'>
         {messages.map(message => (
           <li key={message.id} className={message.senderId === currentUserId ? 'dialogs__messages--myMessage' : ''}>
