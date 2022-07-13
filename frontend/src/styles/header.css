@@ -17,3 +17,13 @@
   margin-left: 88px;
   font-family: Times, serif;
 }
+.Header__auth{
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  gap: 0.5em;
+  margin: 1em;
+}
+.Header__auth a{
+  color: white;
+}

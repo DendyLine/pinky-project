@@ -24,5 +24,6 @@
 .friendList__array {
   display: flex;
   flex-direction: row;
-  margin-left: 5px;
+  margin-left: 20px;
+  align-items: center;
 }

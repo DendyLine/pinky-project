@@ -23,7 +23,18 @@ chatsRoute.get('/chats', async (req, res) => {
 });
 
 chatsRoute.get('/chats/:chatId/messages', async (req, res) => {
-  const messages = await db.message.findMany({where: {chatId: Number(req.params.chatId)}});
+  const messages = await db.message.findMany({
+      where: {chatId: Number(req.params.chatId)},
+      include: {
+        sender: {
+          select:
+            {
+              avaUrl: true, username: true
+            }
+        }
+      }
+    })
+  ;
   res.json(messages);
 });
 

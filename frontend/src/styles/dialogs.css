@@ -11,13 +11,6 @@
   height: 100%;
 }
 
-.dialogs__messages {
-  list-style: none;
-  width: 88%;
-  height: 400px;
-  overflow-y: auto;
-}
-
 
 .dialogs__ul ul {
   margin: 0;
@@ -36,53 +29,37 @@
 }
 
 
-.dialogs__messages li {
-  margin-bottom: 20px;
-}
-
-.dialogs__messages--myMessage {
-  text-align: right;
-}
-.dialogs__ul--block{
+.dialogs__ul--block {
   display: flex;
   width: 100%;
   padding: 15px;
   transition: background-color 0.15s ease-out;
 }
-.dialogs__ul--block:hover{
+
+.dialogs__ul--block:hover {
   background-color: burlywood;
 }
-.dialogs__block--lastMessage{
+
+.dialogs__block--lastMessage {
   margin-top: 30px;
   color: darkslategray;
 }
-.dialogs__block--nameLastMessage{
+
+.dialogs__block--nameLastMessage {
   display: flex;
   flex-direction: column;
   margin-left: 15px;
 }
-a{
+
+a {
   text-decoration: none;
   color: black;
 }
-.dialogs__block--name{
-font-size: x-large;
+
+.dialogs__block--name {
+  font-size: x-large;
   font-weight: bold;
   margin-top: 10px;
 }
-.dialogs__button--back button{
-  width: 50px;
-  height: 50px;
-  border-radius: 0;
-  margin: 10px;
-  transition: background-color 0.15s ease-out;
-}
-.dialogs__button--back {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
 
-}
-.dialogs__button--back button:hover {
-  background-color: burlywood
-}
+

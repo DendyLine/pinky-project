@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import api from '../api';
-import { IChats, IMessage } from '../types';
+import { IChats, IMessage, INewMessage } from '../types';
 
 
 export const fetchChats = createAsyncThunk('chats/all', async () => {
@@ -11,7 +11,7 @@ export const fetchMessages = createAsyncThunk('message/all', async (chatId: stri
   return api.get(`/chats/${chatId}/messages`) as Promise<IMessage[]>;
 });
 
-export const sendMessage = createAsyncThunk('message/send', async (message: Omit<IMessage, 'id'>) => {
+export const sendMessage = createAsyncThunk('message/send', async (message: INewMessage) => {
   return api.post(`/chats/${message.chatId}/messages`, message) as Promise<IMessage>;
 });
 

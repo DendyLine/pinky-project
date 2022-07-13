@@ -15,11 +15,9 @@ export interface IChats {
   lastMessage: IMessage;
 }
 
-export interface IMessage {
+export interface IMessage extends INewMessage{
   id: number;
-  chatId: number;
-  senderId: number;
-  text: string;
+  sender: Pick<IUser, 'username' | 'avaUrl'>;
 }
 
 export interface IPosts {
@@ -30,11 +28,26 @@ export interface IPosts {
   user: string;
   imgUrl: string;
 }
-export interface INews{
-  id: number
-  userId: number
-  user: IUser
-  text: string
-  like: number
-  imgUrl: string
+
+export interface INews {
+  id: number;
+  userId: number;
+  user: IUser;
+  text: string;
+  like: number;
+  imgUrl: string;
+}
+
+export interface IUserCreate {
+  username: string;
+  password: string;
+  country?: string;
+  town?: string;
+  avaUrl?: string;
+}
+
+export interface INewMessage{
+  chatId: number;
+  senderId: number;
+  text: string;
 }

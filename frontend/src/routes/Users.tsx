@@ -31,7 +31,8 @@ const Users = () => {
                   <NavLink to={'/profile/:id'}>
                   <img className='user__img' src={user.avaUrl} alt='ava' />
                   </NavLink>
-                  <button className='user__button' onClick={() => onFollowButton(user.id)}>
+                  <button className={user.followed ? 'user__button user__button--burlywood' : 'user__button user__button--white'}
+                          onClick={() => onFollowButton(user.id)}>
                     {user.followed ? 'Unfollow' : 'Follow'}
                   </button>
                 </div>

@@ -11,18 +11,19 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
+  id        Int       @id @default(autoincrement())
+  username  String    @unique
   password  String
-  avaUrl    String   @default("")
-  country   String   @default("")
-  town      String   @default("")
-  bio       String   @default("")
-  followed  Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now()) @updatedAt
+  avaUrl    String    @default("")
+  country   String    @default("")
+  town      String    @default("")
+  bio       String    @default("")
+  followed  Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now()) @updatedAt
   Post      Post[]
   News      News[]
+  Message   Message[]
 }
 
 model Post {
@@ -43,6 +44,7 @@ model Message {
   id        Int      @id @default(autoincrement())
   chatId    Int
   senderId  Int
+  sender    User     @relation(fields: [senderId], references: [id])
   text      String
   chat      Chat     @relation(fields: [chatId], references: [id])
   createdAt DateTime @default(now())

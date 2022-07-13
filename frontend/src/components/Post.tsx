@@ -27,9 +27,10 @@ const Post = (props: IPostProps) => {
       <div className='profile__post--up'>
         <img src={props.avaUrl} alt='' />
         <div className='profile__post--text'>
-          <div>
+          <span>
             {props.userName}
-          </div>
+            <button className='post__button--delete' onClick={onDeleteButton}>x</button>
+          </span>
           <div>
             {props.message}
           </div>
@@ -39,11 +40,7 @@ const Post = (props: IPostProps) => {
         {props.like} like
       </span>
       </span>
-      <span>
-           <span className='post__button--delete'>
-        <button  onClick={onDeleteButton}>x</button>
-      </span>
-      </span>
+
     </div>
   );
 };

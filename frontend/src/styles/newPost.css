@@ -1,7 +1,17 @@
 .profile__newPost {
-
+margin-bottom: 4px;
 }
 
 .profile__newPost input {
+  border: none
+}
 
+.profile__newPost button{
+background-color: antiquewhite;
+  border: none;
+}
+
+.profile__newPost button:hover{
+  border: 1px solid black;
+  margin-bottom: -1px;
 }

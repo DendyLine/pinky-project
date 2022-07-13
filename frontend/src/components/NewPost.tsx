@@ -18,7 +18,7 @@ const NewPost = () => {
 
   return <div className='profile__newPost'>
     <input value={postText} onChange={onPostChange} type='text' />
-    <button onClick={createPost}>send</button>
+    <button onClick={createPost}>→</button>
   </div>;
 };
 export default NewPost;

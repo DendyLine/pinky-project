@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchMessages, sendMessage } from 'src/redux/dialogsSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
+import 'src/styles/Chat.css';
 import 'src/styles/dialogs.css';
 
 const Messages = () => {
@@ -24,18 +25,22 @@ const Messages = () => {
   return (
     <div className='dialogs'>
       <div className='dialogs__button--back'>
-      <button  onClick={() => navigate('/dialogs')}>back</button>
+        <button onClick={() => navigate('/dialogs')}>←</button>
       </div>
       <ul className='dialogs__messages'>
         {messages.map(message => (
           <li key={message.id} className={message.senderId === currentUserId ? 'dialogs__messages--myMessage' : ''}>
-
-            {message.text}</li>
+            {message.senderId === currentUserId ? '' :
+              <img className='chat__ava' src={message.sender.avaUrl} alt='ava' />}
+            <span>
+              {message.text}
+            </span>
+          </li>
         ))}
       </ul>
       <div>
-        <div>
-          <textarea value={newMessage} onChange={e => setNewMessage(e.target.value)} />
+        <div className='dialogs__button--send'>
+          <input value={newMessage} onChange={e => setNewMessage(e.target.value)} />
           <button onClick={onSend}>send</button>
         </div>
       </div>

@@ -50,12 +50,22 @@
   transition: background-color 0.15s ease-out;
   font-weight: bold;
   border: none;
+}
+
+.user__button--white{
+  background-color: white;
+}
+
+.user__button--burlywood{
   background-color: burlywood;
 }
 
-.user__button:hover{
+.user__button--white:hover{
   background-color: burlywood;
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24)
+}
+
+.user__button--burlywood:hover{
+  background-color: white;
 }
 
 .active-page {
